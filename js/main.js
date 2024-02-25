@@ -56,12 +56,12 @@ function stopSlideshow() {
 
 $(document).ready(function() {
     $('#choose-image-btn').on('click', function() {
-      var randomNumber = Math.floor(Math.random() * 21);
-      var imagePath = 'img/Age' + ('00' + randomNumber).slice(-2) + '.jpg';
+      let randomNumber = Math.floor(Math.random() * 21);
+      let imagePath = 'img/Age' + ('00' + randomNumber).slice(-2) + '.jpg';
       $('#image-container').html('<img src="' + imagePath + '" alt="Age Image">');
 
       // 年齢に合わせた文章表示
-      var ageDescription = '';
+      let ageDescription = '';
       switch (randomNumber) {
         case 0:
           ageDescription = '0歳！Happy Birthday！';
@@ -133,17 +133,17 @@ $(document).ready(function() {
     });
 
     $('#calculate-btn').on('click', function() {
-      var celebrationAmount = parseInt($('#celebration-amount').val()) || 0;
-      var annualInterestRate = 0.08;
+      let celebrationAmount = parseInt($('#celebration-amount').val()) || 0;
+      let annualInterestRate = 0.08;
 
       // 左半分のランダムに取得した画像のファイル名から数字を取得
-      var randomNumber = parseInt($('#age-description').text().match(/\d+/));
+      let randomNumber = parseInt($('#age-description').text().match(/\d+/));
       
       // 20から引いた数の年数分運用
-      var years = 20 - randomNumber;
+      let years = 20 - randomNumber;
 
       // 運用額計算
-      var totalAmount = celebrationAmount * Math.pow((1 + annualInterestRate), years);
+      let totalAmount = celebrationAmount * Math.pow((1 + annualInterestRate), years);
        // 小数点以下を表示しないように整数に変換
       totalAmount = Math.floor(totalAmount);
 
